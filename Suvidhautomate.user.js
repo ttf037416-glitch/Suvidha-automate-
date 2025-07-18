@@ -8,28 +8,20 @@ function runSuvidhaAutofill({ vehicleCount, expNumbers }) {
         const rcUpload = document.querySelector('input[name="rc_file"]');
 
         if (checkbox && vehicleInput && cdfTextarea && dateInput) {
-            // ✅ Tick the declaration checkbox
             checkbox.checked = true;
-
-            // 🚘 Set vehicle count
             vehicleInput.value = vehicleCount;
-
-            // 📄 Set EXP numbers
             cdfTextarea.value = expNumbers.join(',');
 
-            // 📅 Set current date
             const today = new Date();
             const yyyy = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0');
             const dd = String(today.getDate()).padStart(2, '0');
             dateInput.value = `${yyyy}-${mm}-${dd}`;
 
-            // 🖱️ Auto-trigger file upload inputs (for AHK)
             if (dlUpload) dlUpload.click();
             if (rcUpload) rcUpload.click();
 
-            console.log("✅ Autofilled: declaration, vehicles, EXPs, and date");
-
+            console.log("✅ Suvidha autofill done");
             clearInterval(interval);
         }
     }, 300);
