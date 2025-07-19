@@ -10,7 +10,7 @@
 (function () {
     'use strict';
 
-    const desiredVehicleCount = 15;
+    const desiredVehicleCount = 16;
 
     function fillForm() {
         const checkbox = document.getElementById('consg_declaration');
